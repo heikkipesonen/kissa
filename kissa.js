@@ -11,6 +11,11 @@ function kissa(){
 	this._events = new events(this);
 	this._id = false;
 	this._rev = false;	
+
+
+	this._imageContainer.css({
+		'transition-duration':'0.3s'
+	});
 }
 
 kissa.prototype = {
@@ -26,10 +31,13 @@ kissa.prototype = {
 		this._image.src = url;
 		this._imageContainer.empty();
 		this._imageContainer.append(this._image);
-		
+		this._imageContainer.css('opacity',0);
+
 		var me = this;
-		this.onload = function(){
-			this._events.fire('imageload');
+
+		this._image.onload = function(){
+			me._events.fire('imageload');
+			me._imageContainer.css('opacity',1);
 		}
 	},
 	getData:function(){
