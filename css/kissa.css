@@ -1,0 +1,14 @@
+.kissa{
+	max-width: 25%;
+	position: relative;	
+	display: inline-block;
+	vertical-align: top;
+}
+
+.kissa-content{
+	margin: 10px;
+}
+
+.kissa-content-image, .kissa-content-image img{
+	width: 100%;	
+}
